@@ -1,1 +1,18 @@
+title : Course Site for Political Science 318 -- Fall 2020
+author :
+  name : Rotem Dvir
+  email : rdvir@tamu.edu
+  github : rotemdvir
+  twitter : nil
+  feedburner : nil
+
+markdown: kramdown
 theme: jekyll-theme-dinky
+
+exclude: [".rvmrc", ".rbenv-version", "ReadMe.md", "Rakefile", "changelog.md", "License.md"]
+
+
+production_url : https://rotemdvir.github.io/POLS318-Theories-of-IR
+
+JB :
+  version : 0.3.0
