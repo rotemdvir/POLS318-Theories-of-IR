@@ -13,7 +13,7 @@ This is an upper-level course in International Relations (IR). The course offers
 
 ## Course Material
 
-##### Week 1 (08.20.2020)  
+### Week 1 (08.20.2020)  
 - Introduction  
 
 Slides: [Lecture1: Intro](LectureSlides/Lecture1_Intro.pdf)  
