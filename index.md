@@ -16,6 +16,6 @@ This is an upper-level course in International Relations (IR). The course offers
 ##### Week 1 (08.20.2020)  
 - Introduction  
 
-Lecture Slides:  
-Lecture Video:
+Slides: [Lecture1-Intro](repo/rotemdvir/POLS318-Theories-of-IR/LectureSlides/Lecture1_Intro.pdf)  
+Video link:
 
