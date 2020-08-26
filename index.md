@@ -15,9 +15,9 @@ This is an upper-level course in International Relations (IR). The course offers
 
 ### Week 1   
 
-- Lecture 1 (08.20.2020): Introduction [Lecture Slides](LectureSlides/Lecture1_Intro.pdf); [Lecture Video](https://youtu.be/nyrhpPAZHdA)
+- Lecture 1 (08.20.2020): Introduction ([Lecture Slides](LectureSlides/Lecture1_Intro.pdf); [Lecture Video](https://youtu.be/nyrhpPAZHdA))
 
 ### Week 2
 
-  - Lecture 2 (08.25.2020): The Basics of Theory Construction [Lecture Slides](LectureSlides/318__IR_Lecture_2.pdf); [Lecture Video](https://youtu.be/LFNWUqb9Fcc)
+  - Lecture 2 (08.25.2020): The Basics of Theory Construction ([Lecture Slides](LectureSlides/318__IR_Lecture_2.pdf); [Lecture Video](https://youtu.be/LFNWUqb9Fcc))
   
