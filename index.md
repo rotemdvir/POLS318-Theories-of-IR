@@ -31,4 +31,10 @@ Readings:
   
 ### Week 3
 
+  - Lecture 4 (09.01.2020): Material Theories - Realism and Neorealism ([Lecture Slides](LectureSlides/318__IR_Lecture_4.pdf); [Lecture Video](https://youtu.be/INO8rhm7Coc)) 
+  
+
+Readings:  
+
+  - Walt, Stephen M. “International relations: one world, many theories.” *Foreign policy* (1998): 29-46. 
    
