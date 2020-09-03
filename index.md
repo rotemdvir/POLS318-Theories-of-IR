@@ -31,10 +31,12 @@ Readings:
   
 ### Week 3
 
-  - Lecture 4 (09.01.2020): Material Theories - Realism and Neorealism ([Lecture Slides](LectureSlides/318__IR_Lecture_4.pdf); [Lecture Video](https://youtu.be/INO8rhm7Coc)) 
+  - Lecture 4 (09.01.2020): Material Theories - Realism and Neorealism ([Lecture Slides](LectureSlides/318__IR_Lecture_4.pdf); [Lecture Video](https://youtu.be/INO8rhm7Coc))
+  - Lecture 5 (09.03.2020): Material Theories - Security Dilemma and Power Transition Theory ([Lecture Slides](LectureSlides/318__IR_Lecture_5.pdf); [Lecture Video](https://youtu.be/8iD0nTqj16M))
   
 
 Readings:  
 
-  - Walt, Stephen M. “International relations: one world, many theories.” *Foreign policy* (1998): 29-46. 
+  - Walt, Stephen M. “International relations: one world, many theories.” *Foreign policy* (1998): 29-46.
+  - Jervis, Robert. “Cooperation under the security dilemma”. *World Politics* (1978), 167-214.
    
