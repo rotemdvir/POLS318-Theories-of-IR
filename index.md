@@ -40,3 +40,6 @@ Readings:
   - Walt, Stephen M. “International relations: one world, many theories.” *Foreign policy* (1998): 29-46.
   - Jervis, Robert. “Cooperation under the security dilemma”. *World Politics* (1978), 167-214.
    
+### Week 4  
+
+  - Lecture 6 (09.08.2020): Liberalism in World Politics ([Lecture Slides](LectureSlides/318__IR_Lecture_4.pdf); [Lecture Video](https://youtu.be/qron91QY5_I))
