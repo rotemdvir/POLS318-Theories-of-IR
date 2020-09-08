@@ -42,4 +42,10 @@ Readings:
    
 ### Week 4  
 
-  - Lecture 6 (09.08.2020): Liberalism in World Politics ([Lecture Slides](LectureSlides/318__IR_Lecture_4.pdf); [Lecture Video](https://youtu.be/qron91QY5_I))
+  - Lecture 6 (09.08.2020): Liberalism in World Politics ([Lecture Slides](LectureSlides/318__IR_Lecture_6.pdf); [Lecture Video](https://youtu.be/qron91QY5_I))
+  
+
+Readings:  
+
+  - Moravcsik, Andrew. “Taking Preferences Seriously: A Liberal Theory of International Politics.” *International Organization, 51*, 4 (1997), 513-553.
+  - Putnam, Robert. “Diplomacy and Domestic Politics: The Logic of two-level games.” *International Organization, 42*, 3 (1988), 427-460. 
