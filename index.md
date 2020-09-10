@@ -43,9 +43,12 @@ Readings:
 ### Week 4  
 
   - Lecture 6 (09.08.2020): Liberalism in World Politics ([Lecture Slides](LectureSlides/318__IR_Lecture_6.pdf); [Lecture Video](https://youtu.be/qron91QY5_I))
+  - Lecture 7 (09.10.2020): Domestic Politics and IR ([Lecture Slides](LectureSlides/318__IR_Lecture_7.pdf); [Lecture Video](https://youtu.be/b3SX4xuS-xo))
   
 
 Readings:  
 
   - Moravcsik, Andrew. “Taking Preferences Seriously: A Liberal Theory of International Politics.” *International Organization, 51*, 4 (1997), 513-553.
-  - Putnam, Robert. “Diplomacy and Domestic Politics: The Logic of two-level games.” *International Organization, 42*, 3 (1988), 427-460. 
+  - Putnam, Robert. “Diplomacy and Domestic Politics: The Logic of two-level games.” *International Organization, 42*, 3 (1988), 427-460.
+  - Koch, Michael. “Governments, partisanship, and foreign policy: The case of dispute dura- tion.” *Journal of Peace Research, 46*, 6 (2009), 799-817.
+  - Auerswald, David. “Inward bound: Domestic institutions and military conflicts.” *International Organization, 53*, 3 (1999), 469-504.
