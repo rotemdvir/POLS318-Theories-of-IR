@@ -52,3 +52,13 @@ Readings:
   - Putnam, Robert. “Diplomacy and Domestic Politics: The Logic of two-level games.” *International Organization, 42*, 3 (1988), 427-460.
   - Koch, Michael. “Governments, partisanship, and foreign policy: The case of dispute duration.” *Journal of Peace Research, 46*, 6 (2009), 799-817.
   - Auerswald, David. “Inward bound: Domestic institutions and military conflicts.” *International Organization, 53*, 3 (1999), 469-504.
+  
+### Week 5  
+
+  - Lecture 8 (09.15.2020): Rational Choice in IR ([Lecture Slides](LectureSlides/318__IR_Lecture_8.pdf); [Lecture Video](https://youtu.be/A0-_MzdvJEE))
+  
+  
+Readings:  
+
+  - Fearon, James. “Rationalist Explanations for War.” *International Organization, 49*, 3 (1995), 379-414.
+  - Fuhrmann, Matthew and Sechser, Todd. “Signaling Alliance Commitments: Hand-Tying and Sunk Costs in Extended Nuclear Deterrence.” *American Journal of Political Science, 58*, 4 (2014), 919-935.
