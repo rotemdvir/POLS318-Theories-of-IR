@@ -48,17 +48,20 @@ Readings:
 
 Readings:  
 
-  - Moravcsik, Andrew. “Taking Preferences Seriously: A Liberal Theory of International Politics.” *International Organization, 51*, 4 (1997), 513-553.
-  - Putnam, Robert. “Diplomacy and Domestic Politics: The Logic of two-level games.” *International Organization, 42*, 3 (1988), 427-460.
-  - Koch, Michael. “Governments, partisanship, and foreign policy: The case of dispute duration.” *Journal of Peace Research, 46*, 6 (2009), 799-817.
-  - Auerswald, David. “Inward bound: Domestic institutions and military conflicts.” *International Organization, 53*, 3 (1999), 469-504.
+  - Moravcsik, Andrew. “Taking Preferences Seriously: A Liberal Theory of International Politics.” *International Organization 51*, 4 (1997), 513-553.
+  - Putnam, Robert. “Diplomacy and Domestic Politics: The Logic of two-level games.” *International Organization 42*, 3 (1988), 427-460.
+  - Koch, Michael. “Governments, partisanship, and foreign policy: The case of dispute duration.” *Journal of Peace Research 46*, 6 (2009), 799-817.
+  - Auerswald, David. “Inward bound: Domestic institutions and military conflicts.” *International Organization 53*, 3 (1999), 469-504.
   
 ### Week 5  
 
   - Lecture 8 (09.15.2020): Rational Choice in IR ([Lecture Slides](LectureSlides/318__IR_Lecture_8.pdf); [Lecture Video](https://youtu.be/A0-_MzdvJEE))
+  - Lecture 9 (09.17.2020): Constructivism in IR ([Lecture Slides](LectureSlides/318__IR_Lecture_9.pdf); [Lecture Video]()) 
   
   
 Readings:  
 
   - Fearon, James. “Rationalist Explanations for War.” *International Organization, 49*, 3 (1995), 379-414.
   - Fuhrmann, Matthew and Sechser, Todd. “Signaling Alliance Commitments: Hand-Tying and Sunk Costs in Extended Nuclear Deterrence.” *American Journal of Political Science, 58*, 4 (2014), 919-935.
+  - Hopf, Ted. “The Promise of Constructivism in International Relations Theory.” *International Security 23*, 1 (1998), 171-200.
+  - Nunez-Mietz, Fernando G., and Garcia Iommi, Lucrecia. “Can Transnational Norm Advo- cacy Undermine Internalization? Explaining Immunization Against LGBT Rights in Uganda.” *International Studies Quarterly 61*, 1 (2017), 196-209.
