@@ -25,9 +25,9 @@ This is an upper-level course in International Relations (IR). The course offers
   
 Readings:  
 
-  - McClelland, Charles. “The function of theory in international relations.” *Journal of Conflict Resolution*, 4:3 (1960), 303-336.
+  - McClelland, Charles. “The function of theory in international relations.” *Journal of Conflict Resolution 4*, 3 (1960), 303-336.
   - Singer, David J. “The level-of-analysis problem in international relations”. *World Politics*, 14 (1961), 77-92.
-  - Colgan, Jeff. “Where is International Relations Going? Evidence from Graduate Training”. *International Studies Quarterly*, 60:1 (2016), 486-498.
+  - Colgan, Jeff. “Where is International Relations Going? Evidence from Graduate Training”. *International Studies Quarterly 60*, 1 (2016), 486-498.
   
 ### Week 3
 
@@ -56,7 +56,7 @@ Readings:
 ### Week 5  
 
   - Lecture 8 (09.15.2020): Rational Choice in IR ([Lecture Slides](LectureSlides/318__IR_Lecture_8.pdf); [Lecture Video](https://youtu.be/A0-_MzdvJEE))
-  - Lecture 9 (09.17.2020): Constructivism in IR ([Lecture Slides](LectureSlides/318__IR_Lecture_9.pdf); [Lecture Video]()) 
+  - Lecture 9 (09.17.2020): Constructivism in IR ([Lecture Slides](LectureSlides/318__IR_Lecture_9.pdf); [Lecture Video](https://youtu.be/noHzCJjW7Xw)) 
   
   
 Readings:  
