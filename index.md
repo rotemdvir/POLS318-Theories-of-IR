@@ -74,4 +74,4 @@ Readings:
 Readings:  
 
   - Hafner-Burton, Emily, Haggard, S., Lake, D., and Victor, D. “The Behavioral Revolution and International Relations.” *International Organization, 71:S1* (2017), S1-S31.
-  - Levy, Jack. “Prospect Theory and International Relations: Theoretical Applications and An- alytical Problems.” *Political Psychology, 13*, 2 (1992), 283-310. 
+  - Levy, Jack. “Prospect Theory and International Relations: Theoretical Applications and Analytical Problems.” *Political Psychology, 13*, 2 (1992), 283-310. 
