@@ -65,3 +65,13 @@ Readings:
   - Fuhrmann, Matthew and Sechser, Todd. “Signaling Alliance Commitments: Hand-Tying and Sunk Costs in Extended Nuclear Deterrence.” *American Journal of Political Science, 58*, 4 (2014), 919-935.
   - Hopf, Ted. “The Promise of Constructivism in International Relations Theory.” *International Security 23*, 1 (1998), 171-200.
   - Nunez-Mietz, Fernando G., and Garcia Iommi, Lucrecia. “Can Transnational Norm Advo- cacy Undermine Internalization? Explaining Immunization Against LGBT Rights in Uganda.” *International Studies Quarterly 61*, 1 (2017), 196-209.
+  
+### Week 6  
+
+  - Lecture 10 (09.22.2020): Political Psychology and IR ([Lecture Slides](LectureSlides/318__IR_Lecture_10.pdf); [Lecture Video](https://youtu.be/VdRC1b6KWhs))
+  
+
+Readings:  
+
+  - Hafner-Burton, Emily, Haggard, S., Lake, D., and Victor, D. “The Behavioral Revolution and International Relations.” *International Organization, 71:S1* (2017), S1-S31.
+  - Levy, Jack. “Prospect Theory and International Relations: Theoretical Applications and An- alytical Problems.” *Political Psychology, 13*, 2 (1992), 283-310. 
