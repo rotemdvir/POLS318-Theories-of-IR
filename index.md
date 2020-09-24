@@ -69,9 +69,13 @@ Readings:
 ### Week 6  
 
   - Lecture 10 (09.22.2020): Political Psychology and IR ([Lecture Slides](LectureSlides/318__IR_Lecture_10.pdf); [Lecture Video](https://youtu.be/VdRC1b6KWhs))
+  - Lecture 11 (09.24.2020): Political Leaders and Elites ([Lecture Slides](LectureSlides/318__IR_Lecture_11.pdf); [Lecture Video](https://youtu.be/FJ64aZMrjA4)) 
   
 
 Readings:  
 
-  - Hafner-Burton, Emily, Haggard, S., Lake, D., and Victor, D. “The Behavioral Revolution and International Relations.” *International Organization, 71:S1* (2017), S1-S31.
-  - Levy, Jack. “Prospect Theory and International Relations: Theoretical Applications and Analytical Problems.” *Political Psychology, 13*, 2 (1992), 283-310. 
+  - Hafner-Burton, Emily, Haggard, S., Lake, D., and Victor, D. “The Behavioral Revolution and International Relations.” *International Organization 71:S1* (2017), S1-S31.
+  - Levy, Jack. “Prospect Theory and International Relations: Theoretical Applications and Analytical Problems.” *Political Psychology 13*, 2 (1992), 283-310.
+  - Horowitz, Michael and Fuhrmann, Matthew. “Studying Leaders and Military Conflict: Conceptual Framework and Research Agenda.” *Journal of Conflict Resolution 62*, 10 (2018), 2072- 2086.
+  - Hermann, Margaret. “Explaining Foreign Policy Behavior Using the Personal Characteristics of Political Leaders.” *International Studies Quarterly 24*, 1 (1980), 7-46. 
+
