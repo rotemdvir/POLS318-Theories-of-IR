@@ -78,4 +78,14 @@ Readings:
   - Levy, Jack. “Prospect Theory and International Relations: Theoretical Applications and Analytical Problems.” *Political Psychology 13*, 2 (1992), 283-310.
   - Horowitz, Michael and Fuhrmann, Matthew. “Studying Leaders and Military Conflict: Conceptual Framework and Research Agenda.” *Journal of Conflict Resolution 62*, 10 (2018), 2072- 2086.
   - Hermann, Margaret. “Explaining Foreign Policy Behavior Using the Personal Characteristics of Political Leaders.” *International Studies Quarterly 24*, 1 (1980), 7-46. 
+  
+### Week 7  
+
+  - Lecture 12 (09.29.2020): International Political Economy ([Lecture Slides](LectureSlides/318__IR_Lecture_12.pdf); [Lecture Video](https://youtu.be/skKivCIhlXk))
+  
+
+Readings:  
+
+  - Milner, Helen. “The Political Economy of International Trade.” *Annual Review of Political Science 2* (1999), 91-114.
+  - Mansfield, Edward and Mutz, Diana. "Support for Free Trade: Self-Interest, Sociotropic Politics, and Out-Group Anxiety." *International Organization 63*, 3 (2009), 425-457.
 
