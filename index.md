@@ -82,10 +82,13 @@ Readings:
 ### Week 7  
 
   - Lecture 12 (09.29.2020): International Political Economy ([Lecture Slides](LectureSlides/318__IR_Lecture_12.pdf); [Lecture Video](https://youtu.be/skKivCIhlXk))
+  - Lecture 13 (10.01.2020): Economic Policy - Sanctions & Foreign Aid ([Lecture Slides](LectureSlides/318__IR_Lecture_13.pdf); [Lecture Video](https://youtu.be/nJ90EA9FlEU))
+ 
   
-
 Readings:  
 
   - Milner, Helen. “The Political Economy of International Trade.” *Annual Review of Political Science 2* (1999), 91-114.
   - Mansfield, Edward and Mutz, Diana. "Support for Free Trade: Self-Interest, Sociotropic Politics, and Out-Group Anxiety." *International Organization 63*, 3 (2009), 425-457.
+  - Allen, Susan. “The Determinants of Economic Sanctions Success and Failure.” *International Interactions 31*, 2 (2005), 117-138.
+  - Bueno de Mesquita, Bruce and Smith, Alistair. “Foreign Aid and Policy Concessions.” *Journal of Conflict Resolution, 51*, 2 (2007), 251-284.
 
