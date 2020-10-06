@@ -91,4 +91,14 @@ Readings:
   - Mansfield, Edward and Mutz, Diana. "Support for Free Trade: Self-Interest, Sociotropic Politics, and Out-Group Anxiety." *International Organization 63*, 3 (2009), 425-457.
   - Allen, Susan. “The Determinants of Economic Sanctions Success and Failure.” *International Interactions 31*, 2 (2005), 117-138.
   - Bueno de Mesquita, Bruce and Smith, Alistair. “Foreign Aid and Policy Concessions.” *Journal of Conflict Resolution, 51*, 2 (2007), 251-284.
+  
+### Week 8  
+
+  - Lecture 14 (10.06.2020): International Treaties ([Lecture Slides](LectureSlides/318__IR_Lecture_14.pdf); [Lecture Video](https://youtu.be/2DRYIxR9rOs))
+  
+
+Readings:  
+
+  - Simmons, Beth. “Treaty Compliance and Violation.” *Annual Review of Political Science*, 13 (2010), 273-296.
+  - Leeds, B.A. “Do Alliances Deter Aggression? The Influence of Military Alliances on the Initiation of Militarized Interstate Disputes.” *American Journal of Political Science 47*, 3 (2003), 427-439. 
 
