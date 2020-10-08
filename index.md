@@ -95,10 +95,13 @@ Readings:
 ### Week 8  
 
   - Lecture 14 (10.06.2020): International Treaties ([Lecture Slides](LectureSlides/318__IR_Lecture_14.pdf); [Lecture Video](https://youtu.be/2DRYIxR9rOs))
+  - Lecture 15 (10.08.2020): Alliances and other International Treaties ([Lecture Slides](LectureSlides/318__IR_Lecture_15.pdf); [Lecture Video]())
   
 
 Readings:  
 
   - Simmons, Beth. “Treaty Compliance and Violation.” *Annual Review of Political Science*, 13 (2010), 273-296.
-  - Leeds, B.A. “Do Alliances Deter Aggression? The Influence of Military Alliances on the Initiation of Militarized Interstate Disputes.” *American Journal of Political Science 47*, 3 (2003), 427-439. 
+  - Leeds, B.A. “Do Alliances Deter Aggression? The Influence of Military Alliances on the Initiation of Militarized Interstate Disputes.” *American Journal of Political Science 47*, 3 (2003), 427-439.
+  - Allee, Todd and Scalera, Jamie. “The Divergent Effects of Joining International Organizations: Trade Gains and the Rigors of WTO Accession.” *International Organziation 66*, 2 (2012), 243-276.
+  - Fuhrmann, Matthew and Lupu, Yonatan. “Do Arms Control Treaties Work? Assessing the Effectiveness of the Nuclear Nonproliferation Treaty.” *International Studies Quarterly 60*, 3 (2016), 530-539.
 
