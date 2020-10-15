@@ -108,10 +108,13 @@ Readings:
 ### Week 9  
 
   - Lecture 16 (10.13.2020): Democratic Peace Theory ([Lecture Slides](LectureSlides/318__IR_Lecture_16.pdf); [Lecture Video](https://youtu.be/gH6B_74a_PQ))
+  - Lecture 17 (10.15.2020): Democracies in Peace & War ([Lecture Slides](LectureSlides/318__IR_Lecture_17.pdf); [Lecture Video](https://youtu.be/1n_OTlZ8pvM))
   
 
 Readings:  
 
   - Maoz, Zeev and Russett, Bruce. “Normative and Structural Causes of the Democratic Peace, 1946-1986.” *American Political Science Review 87*, 3 (1993), 624-638.
-  - Bueno de Mesquita, Bruce, Morrow, J., Siverson, R., Smith, A. “An Institutional Explanation of the Democratic Peace.” *American Political Science Review 93*, 4 (1999), 791-807. 
+  - Bueno de Mesquita, Bruce, Morrow, J., Siverson, R., Smith, A. “An Institutional Explanation of the Democratic Peace.” *American Political Science Review 93*, 4 (1999), 791-807.
+  - Tomz, Michael and Weeks, Jessica. “Public Opinion and the Democratic Peace.” *American Political Science Review 107*, 4 (2013), 849-865.
+  - Reiter, Dan and Stam, Allen. “Democracy, War Initiation, and Victory.” *American Political Science Review 92*, 2 (1998), 377-389. 
 
