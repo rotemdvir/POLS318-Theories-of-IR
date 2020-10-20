@@ -4,7 +4,7 @@ title: Course Material POLS 318 - Fall 2020
 
 ---
 
-## Instructor
+## Instructor/Lecturer
 **Rotem Dvir**  
 Email: rdvir@tamu.edu; Web: [https://rotemdvir.wixsite.com/mysite](https://rotemdvir.wixsite.com/mysite)
 
@@ -117,4 +117,14 @@ Readings:
   - Bueno de Mesquita, Bruce, Morrow, J., Siverson, R., Smith, A. “An Institutional Explanation of the Democratic Peace.” *American Political Science Review 93*, 4 (1999), 791-807.
   - Tomz, Michael and Weeks, Jessica. “Public Opinion and the Democratic Peace.” *American Political Science Review 107*, 4 (2013), 849-865.
   - Reiter, Dan and Stam, Allen. “Democracy, War Initiation, and Victory.” *American Political Science Review 92*, 2 (1998), 377-389. 
+  
+### Week 10  
+
+  - Lecture 18 (10.20.2020): Audience Costs Theory ([Lecture Slides](LectureSlides/318__IR_Lecture_18.pdf); [Lecture Video](https://youtu.be/92WyeYTq7RI))
+  
+  
+Readings:  
+
+  - Fearon, James. “Domestic Political Audiences and the Escalation of International Disputes.” *American Political Science Review 88*, 3 (1994), 577-592.
+  - Potter, Phillip and Baum, Matthew. “Looking for Audience Costs in all the Wrong Places: Electoral Institutions, Media Access, and Democratic Constraint.” *Journal of Politics 76*, 1 (2014), 167-181.
 
