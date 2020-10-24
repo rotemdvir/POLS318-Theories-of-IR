@@ -1,0 +1,129 @@
+---
+title: "Democratic Peace Theory: A Replication exercise"
+output: pdf_document
+urlcolor: blue
+fontsize: 11pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(psych)  
+library(foreign)
+library(ggplot2)
+library(gplots)
+library(MASS)
+library(Hmisc)
+library(ggthemes)
+library(devtools)
+library(gridExtra)
+library(dplyr)
+library(ggpubr)
+library(readxl)
+MyData <- read_excel("~/Dropbox/TAMU/POLS318_IR/Tasks/Task2/Task 2_Edit.xlsx")
+
+
+```
+
+## A Replication exercise
+This document presents the analysis of a survey experiment I run with my undergraduate students for the course *Intro to IR* (Fall 2020). The experiment replicates the design of [Tomz and Weeks (2013)](https://www.jstor.org/stable/43654037) that assess how the public evaluates decisions to engage in military confrontation with another state. The main test estimates whether the regime of the adversary matters for the degree of support respondents lend to the decision to attack.  
+
+The original study employs four treatments. Since my replication has a much smaller sample (approximately 65 individuals), I implement two steps. First, I restricted the number of treatments to two. Second, I run two versions of the experiment, in both the main treatment is the regime type (rival is democracy or nondemocracy). Version 1 also includes the trade treatment (trade relations with the US - yes or no), version 2 adds an alliance treatment (military alliance with the US - yes or no) to the regime type.  
+
+Below is a screenshot of the two conditions of the main treatment - regime type. In both versions of the experiment, the main treatment is the regime type, and respondents state their degree of support for the conflict policy (on a 1-5 scale from strong favor to strong oppose).
+
+\vspace{0.2em}
+
+![Regime Conditions](design.png)
+
+\vspace{0.2em}
+
+### Analysis
+The main objective of this exercise is to demonstrate to students how the survey works with their own opinions, and whether they will display the same views as the theory predicts. I employ an analysis that focuses on the proportions of responses to the support/oppose question. In order to clearly show the effect of the regime type treatment, I display the breakdown of responses for both conditions in separate plots (result from first version of the experiment). 
+
+\vspace{0.2em}
+
+```{r fig.align="center", fig.width=7.5, fig.height=4, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Support for attacking: regime type treatment"}
+
+# Labels for facets
+reg.lab <- c("Adversary regime: Nondemocracy", "Adversary regime: Democracy")
+names(reg.lab) <- c(0, 1)
+
+trade.lab <- c("No Trade with US", "Trade with US")
+names(trade.lab) <- c(0,1)
+
+
+p1 <- ggplot(MyData, aes(x = factor(choice), group = factor(regime_trt))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  scale_x_discrete(labels = c("1" = "Fav.Strong", "2" = "Fav.Some", "3" = "Neither",
+                              "4" = "Opp.Some", "5" = "Opp.Strong")) +
+  xlab("") + ylab("Proportion") + ylim(0,0.45) + 
+  facet_grid(~regime_trt, labeller = labeller(regime_trt = reg.lab)) +
+  theme_bw()
+
+p1 <- p1 + theme(legend.position = 'none')
+p1
+
+```
+
+\vspace{0.1em}
+
+The results of the analysis show that the replication was successful - when facing a nondemocracy, the degree of support for the conflict is high. When confronting a democracy, there is higher **opposition** to engage in a military conflict.
+
+\vspace{0.3em}
+
+In order to show more conclusive results, I implement another analysis. First, I aggregate the responses of each version by creating a binary variable coded 1 for both opposing the policy options ("strongly" and "somewhat"), and 0 for support ("strongly" and "somewhat"). In addition, I remove the responses of the middle category ("neither").  
+Figure 3 below depicts the analysis for the two versions of the experiment. In both cases, the results offer additional evidence to support the replication of the work by [Tomz and Weeks (2013)](https://www.jstor.org/stable/43654037). Experiment 1 shows that when the rival is a democracy, the extent of support for the conflict policy is lower, compared to a scenario in which the rival is a nondemocracy. These propostions are even clearer in the case of experiment 2.
+
+```{r fig.align="center", fig.width=8, fig.height=4, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Support for attack - regime type treatment (binary measure)"}
+
+
+# Code binary variables
+MyData$support[MyData$choice>3] <- 1
+MyData$support[MyData$choice<3] <- 0
+MyData$support2[MyData$choice2>3] <- 1
+MyData$support2[MyData$choice2<3] <- 0
+
+# Remove middle category values
+MyData2 <- with(MyData, MyData[!is.na(support), ])
+MyData3 <- with(MyData, MyData[!is.na(support2), ])
+
+reg.lab2 <- c("Rival: Nondemocracy", "Rival: Democracy")
+names(reg.lab2) <- c(0, 1)
+
+p2<- ggplot(MyData2, aes(x = factor(support), group = factor(regime_trt))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_fill_brewer(palette="Set1") +
+  scale_x_discrete(labels = c("0" = "Favor attack", "1" = "Oppose attack")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") + ylim(0,0.65) + ggtitle("Experiment 1") +
+  facet_grid(~regime_trt, labeller = labeller(regime_trt = reg.lab2)) +
+  theme_bw()
+
+p2 <- p2 + theme(legend.position = 'none')
+
+### Aggregate choices to favor/oppose (regime type condition) - version 2
+p5 <- ggplot(MyData3, aes(x = factor(support2), group = factor(regime_trt3))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_fill_brewer(palette="Set1") +
+  scale_x_discrete(labels = c("0" = "Favor attack", "1" = "Oppose attack")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("") + ylim(0,0.65) + ggtitle("Experiment 2") +
+  facet_grid(~regime_trt3, labeller = labeller(regime_trt3 = reg.lab2)) +
+  theme_bw()
+
+
+p5 <- p5 + theme(legend.position = 'none') 
+
+pl <- ggarrange(p2, p5, ncol = 2, nrow = 1)
+pl
+
+```
+
+
