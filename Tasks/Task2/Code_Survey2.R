@@ -17,12 +17,6 @@ library(ggpubr)
 library(readxl)
 MyData <- read_excel("~/")
 
-# Code binary variables (0=favor attack; 1=oppose attack)
-MyData$support[MyData$choice>3] <- 1
-MyData$support[MyData$choice<3] <- 0
-MyData$support2[MyData$choice2>3] <- 1
-MyData$support2[MyData$choice2<3] <- 0
-
 # Label facets for conditions
 reg.lab <- c("Adversary regime: Nondemocracy", "Adversary regime: Democracy")
 names(reg.lab) <- c(0, 1)
@@ -32,7 +26,7 @@ names(trade.lab) <- c(0,1)
 
 ### Figure 1: all choice options
 
-ggplot(MyData, aes(x = factor(choice), group = factor(regime_trt))) +
+p1 <- ggplot(MyData, aes(x = factor(choice), group = factor(regime_trt))) +
   geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count") +
   geom_text(aes( label = scales::percent(..prop..),
                  y= ..prop.. ), stat= "count", vjust = -.5) +
@@ -43,10 +37,19 @@ ggplot(MyData, aes(x = factor(choice), group = factor(regime_trt))) +
   facet_grid(~regime_trt, labeller = labeller(regime_trt = reg.lab)) +
   theme_bw()
 
+p1 <- p1 + theme(legend.position = 'none')
+
+p1 <- annotate_figure(p1, top = text_grob("Public approval for president decision by adversary regime type", 
+                                          color = "darkblue", face = "bold", size = 16))
+
 ### Figure 2: aggregate choices to favor/oppose (regime type condition)
 
+# Code binary variables (0=favor attack; 1=oppose attack)
+MyData <- MyData %>%
+  mutate(support = ifelse(choice>3, 1, 0))
+
 # Remove middle category
-MyData2 <- with(MyData, MyData[!is.na(support), ])
+MyData2 <- with(MyData, MyData[!(choice == 3), ])
 
 p2<- ggplot(MyData2, aes(x = factor(support), group = factor(regime_trt))) +
   geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
@@ -77,7 +80,13 @@ p3<- ggplot(MyData2, aes(x = factor(support), group = factor(trade_trt))) +
 p3 <- p3 + theme(legend.position = 'none')
 
 ## Experiment 2, remove missing data
-MyData3 <- with(MyData, MyData[!is.na(support2), ])
+
+# Code binary variables (0=favor attack; 1=oppose attack)
+MyData <- MyData %>%
+  mutate(support2 = ifelse(choice2>3, 1, 0))
+
+# Remove middle category
+MyData3 <- with(MyData, MyData[!(choice == 3), ])
 
 ### Figure 4: all choice options
 p4 <- ggplot(MyData, aes(x = factor(choice2), group = factor(regime_trt3))) +
@@ -107,9 +116,14 @@ p5 <- ggplot(MyData3, aes(x = factor(support2), group = factor(regime_trt3))) +
   theme_bw()
 
 
-p5 <- p5 + theme(legend.position = 'none') 
+p5 <- p5 + theme(legend.position = 'none')
 
-pl <- ggarrange(p2, p5, ncol = 2, nrow = 1)
+## Combine plots and edit title
+p6 <- ggarrange(p2, p5, ncol = 2, nrow = 1)
+
+p6 <- annotate_figure(p6, top = text_grob("Public approval for president decision by adversary regime type", 
+                                          color = "darkblue", face = "bold", size = 16))
+
 
 #################### Coding for data  ####################
 # trt1: regime (dictator=0; democracy=1)
