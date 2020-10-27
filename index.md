@@ -129,4 +129,14 @@ Readings:
   - Fearon, James. “Domestic Political Audiences and the Escalation of International Disputes.” *American Political Science Review 88*, 3 (1994), 577-592.
   - Potter, Phillip and Baum, Matthew. “Looking for Audience Costs in all the Wrong Places: Electoral Institutions, Media Access, and Democratic Constraint.” *Journal of Politics 76*, 1 (2014), 167-181.
   - Tomz, Michael. “Domestic Audience Costs in International Relations: An Experimental Approach.” *International Organization 61*, 4 (2007), 821-840.
+  
+### Week 11  
+
+  - Lecture 20 (10.27.2020): Deterrence, Reputation, and Resolve ([Lecture Slides](LectureSlides/318__IR_Lecture_20.pdf); [Lecture Video](https://youtu.be/-_enrQcNYq0))
+  
+  
+Readings:  
+
+  - Lupton, Danielle. “Signaling Resolve: Leaders, Reputations, and the Importance of Early Interactions.” *International Interactions 44*, 1 (2018), 59-87.
+  - Weisiger, Alex and Yarhi-Milo, Keren. “Revisiting Reputation: How Pat Actions Matter in International Politics.” *International Organization 69*, 2 (2015), 473-495.
 
