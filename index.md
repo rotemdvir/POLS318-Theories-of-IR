@@ -133,10 +133,13 @@ Readings:
 ### Week 11  
 
   - Lecture 20 (10.27.2020): Deterrence, Reputation, and Resolve ([Lecture Slides](LectureSlides/318__IR_Lecture_20.pdf); [Lecture Video](https://youtu.be/-_enrQcNYq0))
+  - Lecture 21 (10.29.2020): Coercion and Military Power ([Lecture Slides](LectureSlides/318__IR_Lecture_21.pdf); [Lecture Video](https://youtu.be/9eoLCR5AeXk))
   
   
 Readings:  
 
   - Lupton, Danielle. “Signaling Resolve: Leaders, Reputations, and the Importance of Early Interactions.” *International Interactions 44*, 1 (2018), 59-87.
   - Weisiger, Alex and Yarhi-Milo, Keren. “Revisiting Reputation: How Pat Actions Matter in International Politics.” *International Organization 69*, 2 (2015), 473-495.
+  - Horowitz, Michael and Reiter, Dan. “When Does Aerial Bombing Work? Quantitative Empirical Tests, 1917-1999.” *Journal of Conflict Resolution 45*, 2 (2001), 147-173.
+  - Allen, Susan. “Time Bombs: Estimating the Duration of Coercive Bombing Campaigns.” *Journal of Conflict Resolution 51*, 1 (2007), 112-133.
 
