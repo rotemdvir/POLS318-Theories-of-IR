@@ -1,0 +1,224 @@
+---
+title: "Audience Costs Theory: A Replication exercise"
+output: pdf_document
+urlcolor: blue
+fontsize: 11pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(psych)  
+library(foreign)
+library(ggplot2)
+library(gplots)
+library(MASS)
+library(Hmisc)
+library(ggthemes)
+library(devtools)
+library(gridExtra)
+library(dplyr)
+library(ggpubr)
+library(readxl)
+MyData <- read_excel("~/Dropbox/TAMU/POLS318_IR/Tasks/Task3/Task3_Edit.xlsx")
+
+
+```
+
+## Introduction & Design
+This document presents the analysis of a survey experiment I run with my undergraduate students for the course *Intro to IR* (Fall 2020). The experiment replicates two studies: [Tomz (2007)](https://www.jstor.org/stable/4498169) and [(Levy et al. 2015)](https://doi.org/10.1111/ajps.12197). Both experiments assess public approval of leaders behavior in conflict with a focus on decision to break promises - backdown from a threat, or enter a conflict after a promise to stay out. In both cases, the experiment measure the degree of leader's approval and motivations behind respondents decisions.
+
+Beginning with the work by [Tomz (2007)](https://www.jstor.org/stable/4498169), I describe to respondents two scenarios of conflict. In one case, the US president promises to stay out of the conflict. In the other, the president issues an *empty threat* - a promise to intervene with military forces, yet later decides to back-down. Then, I compare the degree of approval between both options.  
+Below is the first cut of the results - the proportions of approve/disapprove based on a 5-point scale. In order to clearly show the effect of the policy treatment (stay out or empty threat), I display the breakdown of responses for both conditions in separate plots. 
+
+\vspace{0.2em}
+
+```{r fig.align="center", fig.width=8, fig.height=5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Experiment 1"}
+
+# Labels for facets
+pol.lab <- c("Stay Out", "Empty Threat")
+names(pol.lab) <- c(0, 1)
+
+p1 <- ggplot(MyData, aes(x = factor(choice), group = factor(trt_pol))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_x_discrete(labels = c("1" = "App.Strong", "2" = "App.Some", "3" = "Neither",
+                              "4" = "Disapp.Some", "5" = "Disapp.Strong")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") + ylim(0, 0.45) +
+  facet_grid(~trt_pol, labeller = labeller(trt_pol = pol.lab)) +
+  theme_bw()
+
+p1 <- p1 + theme(legend.position = 'none')
+p1
+
+```
+
+\vspace{0.1em}
+
+The results of the analysis provide a preliminary evidence that the replication was successful - the degree of disapproval is much higher for the *empty threat* option compared to the *stay out* one.
+
+\vspace{0.3em}
+
+In order to show more conclusive results, I implement another analysis. First, I aggregate the responses of each version by creating a binary variable coded 1 for both opposing the policy options ("strongly" and "somewhat"), and 0 for support ("strongly" and "somewhat"). In addition, I remove the responses of the middle category ("neither").  
+Figure 2 below depicts the proportions of both options, separated by type of policy choice - "stay out" or "empty threat".
+
+
+```{r fig.align="center", fig.width=6, fig.height=5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Experiment 1 - Aggregated responses"}
+
+
+# 0=approve; 1=disapprove
+MyData <- MyData %>%
+  mutate(support = ifelse(choice>3, 1, 0))
+
+MyData2 <- with(MyData, MyData[!(choice == 3), ])
+
+# collapse into binary, ignore mid result (total 13 respondents)
+p2 <- ggplot(MyData2, aes(x = factor(support), group = factor(trt_pol))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_fill_brewer(palette="Set1") +
+  scale_x_discrete(labels = c("0" = "Approve", "1" = "Disapprove")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") +
+  facet_grid(~trt_pol, labeller = labeller(trt_pol = pol.lab)) +
+  theme_bw()
+
+p2 <- p2 + theme(legend.position = 'none')
+
+p2 
+
+```
+
+One interesting aspect of this test is to calculate the "size" of the audience costs depending upon additional conditions. I focus on the variations in audience costs as a function of the military strength condition. Thus, I begin with creating two smaller datasets, one for "strong" adversary, and one for "weak". Then, using crosstabs, I break-down the responses to the approval questions for each policy ("stay-out" and "empty threat"). The code below details this procedure, the comments provide some of the results.
+
+```{r echo = T, warning = FALSE, message=FALSE}
+
+# Crosstabs of disapproval by military condition
+dat1 <- MyData %>%
+        filter(trt_mil == 0) 
+
+dat2 <- MyData %>%
+  filter(trt_mil == 1) 
+
+# weak adversary military
+t1 <- table(dat1$trt_pol, dat1$choice)
+
+# I add the high values (4+5) which correspond with disapproval.
+# Then, I compute their proportion of the total response (per policy type)
+# The main outcome: 81% (empty threat) - 41% (stay-out) = 40% total Audience costs)
+
+# Strong adversary military
+t2 <- table(dat2$trt_pol, dat2$choice) 
+
+# similar procedure as t1
+# The main outcome: 68% (empty threat) - 52% (stay-out) = 16% total Audience costs)
+
+```
+
+In the second experiment, respondents read about another conflict scenario, and the American response. In both cases, the president violates an early promise. First, the "Empty threat" option as experiment 1. Second, a "Backed-in" option in which the president promises to "stay-out", but then chooses to send forces and intervene in the conflict. I measure the proportion of approval for either decision. Below are the responses based on a 5-point scale.
+
+```{r fig.align="center", fig.width=8.5, fig.height=5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Approval - Disapproval"}
+
+# labels for facets
+pol.lab2 <- c("Backed In", "Empty Threat")
+names(pol.lab2) <- c(0, 1)
+info.lab <- c("No Info", "New info")
+names(info.lab) <- c(0, 1)
+
+p4 <- ggplot(MyData, aes(x = factor(choice2), group = factor(trt2_incon))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_x_discrete(labels = c("1" = "App.Strong", "2" = "App.Some", "3" = "Neither",
+                              "4" = "Disapp.Some", "5" = "Disapp.Strong")) +
+  scale_fill_brewer(palette="Set1") +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") +
+  facet_grid(~trt2_incon, labeller = labeller(trt2_incon = pol.lab2)) +
+  theme_bw()
+
+p4 <- p4 + theme(legend.position = 'none')
+
+p4
+```
+
+This first-cut of the responses shows that respondents are more critical for backing-down (approx. 75% disapproval) compared to a decision to "back-in" (which gains about 48% approval total).  
+
+\vspace{1em}
+
+This experiment included another element - the role of **new information**. The question is what are the effects on approval when the president provides new information to justify the decision to "Back-down" or "Back-in"?  
+Similar to experiment 1, I aggregate the responses to categories of "Approve" of "Disapprove" (and remove the middle category of "Neither"). The figure below demonstrate the proportion of approval for either type of ‘broken’ promise, also accounting for the information condition.
+
+```{r fig.align="center", fig.width=8, fig.height=5.5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "The effect of new information on approval"}
+
+# Code binary variables (0=approve; 1=disapprove)
+MyData <- MyData %>%
+  mutate(support2 = ifelse(choice2>3, 1, 0))
+
+# Remove middle category (total 13 respondents)
+MyData3 <- with(MyData, MyData[!(choice2 == 3), ])
+
+# Figure 5: aggregate choices to Approve/Disapprove
+
+p5 <- ggplot(MyData3, aes(x = factor(support2), group = factor(trt2_incon))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes( label = scales::percent(..prop..),
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_fill_brewer(palette="Set1") +
+  scale_x_discrete(labels = c("0" = "Approve", "1" = "Disapprove")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("") +
+  facet_grid(. ~ trt2_incon + trt2_info, labeller = labeller(trt2_incon = pol.lab2, trt2_info = info.lab)) +
+  theme_bw()
+
+p5 <- p5 + theme(legend.position = 'none')
+p5
+```
+
+What can we learn from this analysis? First, as the previous figure shows, respondents disapprove of a "Back-down" option, and are less concerned from the other type of broken promise ("Back-in"). Also, the *new information condition* is pretty powerful - providing justification for the president's choice can reduce the disapproval for "Backing-down", and enhance the approval when "Backing-in".  
+These findings replicate two existing studies on the public angle of audience costs theory [(Fearon 1994)](https://www.jstor.org/stable/2944796). First, the 'other type' of broken promises - "Backing-in", the evidence is presented by [Levy et al. (2015)](https://doi.org/10.1111/ajps.12197). The effect of new information was introduced by [Levendusky and Horowitz (2012)](https://doi.org/10.1017/S002238161100154X).  
+
+\vspace{1em}
+
+Finally, the survey evaluated how the decision to violate a promise affects views about the president’s competence, as well as how the choice affected the US reputation and credibility. The responses for these items are based on 1-4 or 1-5 scale. I collected the negative responses (i.e. leader is incompetent, damages to reputation etc.) and compared them for each of the policy options ("Back-down" and "Back-in"). In all three options, the decision to "Back-down" is viewed much more negatively. It harms the US credibility and reputation a lot more, and the president is seen as more incompetent in such a scenario.
+ 
+```{r fig.align="center", fig.width=8, fig.height=5.5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Attributes"}
+
+# Add results to dataset (proportion of bad reputation, credibility and incompetnece)
+dat5 <- tibble(
+  pol = c("Backing-In", "Back-Down"),
+  reputation = c(0.45, 0.9),
+  credibility = c(0.51, 0.9),
+  incompetent = c(0.3, 0.68))
+
+# Create plots for each attribute
+
+p6a <- ggplot(dat5, aes(x = factor(pol), y = reputation)) +
+  geom_bar(fill = "darkblue", stat = "identity", width = 0.5) +
+  geom_text(aes(label = scales::percent(reputation)), vjust = -0.3) +
+  xlab("") + ylab("Damage to Reputation") +
+  theme_bw()
+
+p6b <- ggplot(dat5, aes(x = factor(pol), y = credibility)) +
+  geom_bar(fill = "red", stat = "identity", width = 0.5) +
+  geom_text(aes(label = scales::percent(credibility)), vjust = -0.3) +
+  xlab("") + ylab("US Credibility Damage") +
+  theme_bw()
+
+p6c <- ggplot(dat5, aes(x = factor(pol), y = incompetent)) +
+  geom_bar(fill = "darkgreen", stat = "identity", width = 0.5) +
+  geom_text(aes(label = scales::percent(incompetent)), vjust = -0.3) +
+  xlab("") + ylab("President Incompetence") +
+  theme_bw() + ylim(0, 0.9)
+
+# Plot negative effects of breaking promises
+
+p6 <- ggarrange(p6a, p6b, p6c,
+          ncol = 3, nrow = 1)
+p6 <-  annotate_figure(p6, top = text_grob("The political costs of breaking promises", color = "darkblue", face = "bold", size = 14))
+
+p6
+```
+
