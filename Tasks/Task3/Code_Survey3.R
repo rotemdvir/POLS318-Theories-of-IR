@@ -13,9 +13,6 @@ library(gridExtra)
 library(dplyr)
 library(ggpubr)
 
-# Set Randomizer
-set.seed(2020)
-
 # Upload Data
 library(readxl)
 MyData <- read_excel("~/Dropbox/TAMU/POLS318_IR/Tasks/Task3/Task3_Edit.xlsx")
@@ -66,11 +63,8 @@ p2 <- p2 + theme(legend.position = 'none')
 # add mean by group
 library(grid)
 
-means <- ddply(MyData, "trt_pol", summarize, grp.m = mean(choice_cont))
-
 p3 <- ggplot(MyData, aes(x = choice_cont, fill = factor(trt_pol), color = factor(trt_pol))) +
   geom_histogram(alpha=0.5, position="identity", binwidth = 10) +
-  geom_vline(data = means, aes(xintercept = grp.m, color = factor(trt_pol)), linetype = "dashed", size = 1.2) +
   geom_text(x = 12, y = 7, label = "Stay Out", color = "blue") +
   geom_text(x = 75, y = 7, label = "Empty Threat", color = "red") +
   scale_fill_brewer(palette="Set1") +
@@ -163,7 +157,7 @@ p6a <- ggplot(dat5, aes(x = factor(pol), y = reputation)) +
   theme_bw()
 
 p6b <- ggplot(dat5, aes(x = factor(pol), y = credibility)) +
-  geom_bar(fill = "maroon", stat = "identity", width = 0.5) +
+  geom_bar(fill = "red", stat = "identity", width = 0.5) +
   geom_text(aes(label = scales::percent(credibility)), vjust = -0.3) +
   xlab("") + ylab("US Credibility Damage") +
   theme_bw()
@@ -178,7 +172,7 @@ p6c <- ggplot(dat5, aes(x = factor(pol), y = incompetent)) +
 
 p6 <- ggarrange(p6a, p6b, p6c,
           ncol = 3, nrow = 1)
-p6 <-  annotate_figure(p6, top = text_grob("Breaking promises and president approval", color = "darkblue", face = "bold", size = 14))
+p6 <-  annotate_figure(p6, top = text_grob("The political costs of breaking promises", color = "darkblue", face = "bold", size = 14))
 
 #################### Coding for data  ####################
 ### Exp. 1
