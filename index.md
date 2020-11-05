@@ -146,7 +146,7 @@ Readings:
 ### Week 12  
 
   - Lecture 22 (11.03.2020): Territorial Disputes ([Lecture Slides](LectureSlides/318__IR_Lecture_22.pdf); [Lecture Video](https://youtu.be/fvNk5rH68js))
-  - Lecture 23 (11.05.2020): Territorial Disputes - the Motivations ([Lecture Slides](LectureSlides/318__IR_Lecture_23.pdf))
+  - Lecture 23 (11.05.2020): Territorial Disputes - the Motivations ([Lecture Slides](LectureSlides/318__IR_Lecture_23.pdf); [Lecture Video](https://youtu.be/UDSFZCZkZBo))
   
 
 Readings:  
