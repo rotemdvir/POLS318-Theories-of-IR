@@ -146,10 +146,13 @@ Readings:
 ### Week 12  
 
   - Lecture 22 (11.03.2020): Territorial Disputes ([Lecture Slides](LectureSlides/318__IR_Lecture_22.pdf); [Lecture Video](https://youtu.be/fvNk5rH68js))
+  - Lecture 23 (11.05.2020): Territorial Disputes - the Motivations ([Lecture Slides](LectureSlides/318__IR_Lecture_23.pdf))
   
 
 Readings:  
 
   - Vasquez, John. “Why do Neighbors Fight? Proximity, Interaction, or Territoriality.” *Journal of Peace Research 32*, 3 (1995), 277-293.
-  - Wright, Thorin and Diehl, Paul. “Unpacking Territorial Disputes: Domestic Political Influences and War.” *Journal of Conflict Resolution 60*, 4 (2016), 645-669. 
+  - Wright, Thorin and Diehl, Paul. “Unpacking Territorial Disputes: Domestic Political Influences and War.” *Journal of Conflict Resolution 60*, 4 (2016), 645-669.
+  - Johnson, Dominic and Toft, Monica. “Grounds for War: The Evolution of Territorial Conflict.” *International Security 38*, 3 (2014), 7-38.
+  - Manekin, Devorah, Grossman, Guy, and Mitts, Tamar. “Contested Ground: Disentangling Material and Symbolic Attachment to Disputed Territory.” *Political Science Research and Methods 7*, 4 (2019), 679-697.
 
