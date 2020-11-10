@@ -155,4 +155,14 @@ Readings:
   - Wright, Thorin and Diehl, Paul. “Unpacking Territorial Disputes: Domestic Political Influences and War.” *Journal of Conflict Resolution 60*, 4 (2016), 645-669.
   - Johnson, Dominic and Toft, Monica. “Grounds for War: The Evolution of Territorial Conflict.” *International Security 38*, 3 (2014), 7-38.
   - Manekin, Devorah, Grossman, Guy, and Mitts, Tamar. “Contested Ground: Disentangling Material and Symbolic Attachment to Disputed Territory.” *Political Science Research and Methods 7*, 4 (2019), 679-697.
+  
+### Week 13  
+
+  - Lecture 24 (11.10.2020): International Terrorrism - the causes ([Lecture Slides](LectureSlides/318__IR_Lecture_24.pdf); [Lecture Video](https://youtu.be/Sj7tKBirmSQ))
+  
+  
+Readings:  
+
+  - Pape, Robert. “The strategic logic of suicide terrorism.” *American political science review 97*, 3 (2003): 343-361.
+  - Chenoweth, Erica. “Terrorism and democracy.” *Annual Review of Political Science 16* (2013): 355-378. 
 
