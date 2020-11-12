@@ -159,10 +159,13 @@ Readings:
 ### Week 13  
 
   - Lecture 24 (11.10.2020): International Terrorrism - the causes ([Lecture Slides](LectureSlides/318__IR_Lecture_24.pdf); [Lecture Video](https://youtu.be/Sj7tKBirmSQ))
+  - Lecture 25 (11.10.2020): International Terrorrism - effects & CT ([Lecture Slides](LectureSlides/318__IR_Lecture_25.pdf); [Lecture Video](https://youtu.be/HPGFblVQcdE))
   
   
 Readings:  
 
   - Pape, Robert. “The strategic logic of suicide terrorism.” *American political science review 97*, 3 (2003): 343-361.
-  - Chenoweth, Erica. “Terrorism and democracy.” *Annual Review of Political Science 16* (2013): 355-378. 
+  - Chenoweth, Erica. “Terrorism and democracy.” *Annual Review of Political Science 16* (2013): 355-378.
+  - Getmansky, Anna and Zeitzoff, Thomas. “Terrorism and Voting: The Effect of Rocket Threat on Voting in Israeli Elections”, *American Political Science Review 108*, 3 (2014), 588-604.
+  - Mir, Asfandyar, & Moore, Dylan “Drones, surveillance, and violence: Theory and evidence from a us drone program.” *International Studies Quarterly 63*, 4 (2019), 846-862. 
 
