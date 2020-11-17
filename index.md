@@ -159,7 +159,7 @@ Readings:
 ### Week 13  
 
   - Lecture 24 (11.10.2020): International Terrorrism - the causes ([Lecture Slides](LectureSlides/318__IR_Lecture_24.pdf); [Lecture Video](https://youtu.be/Sj7tKBirmSQ))
-  - Lecture 25 (11.10.2020): International Terrorrism - effects & CT ([Lecture Slides](LectureSlides/318__IR_Lecture_25.pdf); [Lecture Video](https://youtu.be/HPGFblVQcdE))
+  - Lecture 25 (11.12.2020): International Terrorrism - effects & CT ([Lecture Slides](LectureSlides/318__IR_Lecture_25.pdf); [Lecture Video](https://youtu.be/HPGFblVQcdE))
   
   
 Readings:  
@@ -168,4 +168,14 @@ Readings:
   - Chenoweth, Erica. “Terrorism and democracy.” *Annual Review of Political Science 16* (2013): 355-378.
   - Getmansky, Anna and Zeitzoff, Thomas. “Terrorism and Voting: The Effect of Rocket Threat on Voting in Israeli Elections”, *American Political Science Review 108*, 3 (2014), 588-604.
   - Mir, Asfandyar, & Moore, Dylan “Drones, surveillance, and violence: Theory and evidence from a us drone program.” *International Studies Quarterly 63*, 4 (2019), 846-862. 
+  
+### Week 14  
+
+  - Lecture 26 (11.17.2020): Modern Technology and IR ([Lecture Slides](LectureSlides/318__IR_Lecture_26.pdf); [Lecture Video](https://youtu.be/Mi1c66gwvL0))
+  
+  
+Readings:  
+
+  - Horowitz, Michael. “Do Emerging Military Technologies Matter for International Politics?” *Annual Review of Political Science 23* (2020), 385-400.
+  - Kostyuk, Nadiya, and Wayne, Carly. “The Microfoundations of State Cybersecurity: Cyber Risk Perceptions and the Mass Public.” *Journal of Global Security Studies* (2020). 
 
