@@ -71,8 +71,14 @@ p2 <- ggplot(MyData2, aes(x = factor(support2), group = factor(trt_result1))) +
 p2 <- p2 + theme(legend.position = 'none')
 
 # Regression models: two DVs
+library(modelsummary)
+
 summary(m1 <- lm(approve1 ~ factor(trt_covert1) + gender + poli, data = MyData))
 summary(m1a <- lm(results1 ~ factor(trt_covert1) + factor(trt_result1) + gender + poli, data = MyData))
+
+m <- list(m1, m1a)
+modelsummary(m, stars = T, coef_rename = c("factor(trt_covert1)2" = "Covert", "factor(trt_covert1)3" = "Covert_Secret",
+                                           "factor(trt_result1)1" = "Success", "gender" = "Gender", "poli" = "Party"))
 
 ### Experiment 2  ###
 # Figure 3: approve/disapprove for covert treatment (7-scale results)
@@ -186,12 +192,20 @@ p7 <- ggplot(MyData, aes(x = factor(transparent_imp))) +
 p7 <- p7 + theme(legend.position = 'none')
 
 # Trust cont. measure (no interactions): can be added to Git file
+library(ggeffects)
 
 summary(m <- glm(support4 ~ factor(trt_covert3) + 
                   trust_govt + transparent_imp + gender + poli, data = MyData4, family = binomial(link = "probit")))
 
-x <- ggpredict(m, terms = c("trt_covert3", "trust_govt [30, 60]"))
-plot(x, ci.style = "errorbar")
+pre <- ggpredict(m, terms = c("trt_covert3", "trust_govt [30, 60]"))
+p8 <- plot(pre, ci.style = "errorbar") +
+  labs(
+    x = "",
+    y = "Probability of support",
+    title = "Predicted probability of public support",
+    colour = "Degree of trust in government") +
+  scale_x_continuous(labels = c("Overt", "Covert"), breaks = c(0, 1)) +
+  scale_colour_brewer(palette = "Set1", labels = c("Low", "High"))
 
 
 #################### Coding for data  ####################

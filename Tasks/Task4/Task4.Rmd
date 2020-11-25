@@ -1,0 +1,130 @@
+---
+title: "Covert action and public approval: A replication"
+output: pdf_document
+urlcolor: blue
+fontsize: 11pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(psych)  
+library(foreign)
+library(ggplot2)
+library(gplots)
+library(MASS)
+library(Hmisc)
+library(ggthemes)
+library(devtools)
+library(gridExtra)
+library(dplyr)
+library(ggpubr)
+library(readxl)
+MyData <- read_excel("~/Dropbox/TAMU/POLS318_IR/Tasks/Task4/Task4_Edit.xlsx")
+
+```
+
+## Introduction
+This document presents the analysis of a survey experiment I run with my undergraduate students for the course *Intro to IR* (Fall 2020). The experiment replicates several aspects of the design of [Myrick (2020)](https://doi.org/10.1086/707308) that assess how the public evaluates decisions to engage in military intervention while notifying the public in advance, or keeping the operation secret (a transparency norm). The main test estimates the proportion of support given to the government decision to intervene when the action was overt (known in advance) or covert (unknown).
+
+The original study employs three experiments with two treatments in each. Since my replication has a much smaller sample (approximately 98 individuals), I run three scenario and in each case, I replicate the main transparency treatment (covert/overt) and other elements.  
+
+Below is a screenshot of the two conditions of the main treatment - transparency. In all versions of the experiment, respondents state their degree of support for the intervention (on a 1-7 scale).
+
+\vspace{0.2em}
+
+![Transparency conditions](trt.png)
+
+\vspace{0.2em}
+
+### Analysis
+The analysis focuses on the proportions of responses to the approve/disapprove question. In order to clearly show the effect of the transparency treatment, I display the breakdown of responses for both conditions in separate plots (result from first version of the experiment). 
+
+\vspace{0.2em}
+
+```{r fig.align="center", fig.width=7, fig.height=4, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Support for intervention - tranparency treatment (binary measure)"}
+
+# Remove middle category (total 10 respondents)
+MyData2 <- with(MyData, MyData[!(approve1 == 4), ])
+
+# Code binary variables (1=approve; 0=disapprove)
+MyData2 <- MyData2 %>%
+  mutate(support = ifelse(approve1>3, 1, 0))
+
+# Label facets
+covert.lab <- c("Overt", "Covert", "Covet-Secret")
+names(covert.lab) <- c(1, 2, 3)
+
+## Figure 1: approval (binary) by 3 covert levels
+p1 <- ggplot(MyData2, aes(x = factor(support), group = factor(trt_covert1))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes(label = scales::percent(..prop..), fontface = "bold",
+                y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_fill_brewer(palette="Set1") +
+  scale_x_discrete(labels = c("0" = "Disapprove", "1" = "Appprove")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") + 
+  facet_grid(~trt_covert1, labeller = labeller(trt_covert1 = covert.lab)) +
+  theme_bw()
+
+p1 <- p1 + theme(legend.position = 'none')
+p1
+```
+
+\vspace{0.1em}
+
+The first analysis uses a three-level treatment: in addition to the overt/covert conditions (as in figure 1), a third condition states that the government decides on a covert action despite the fact that experts argued it offers no clear benefits. The results of the analysis show that the degree of approval is higher for an intervention that was known to the public, compared to the two version of a covert action (not much difference between the unknown actions). This offers a preliminary evidence that respondents care about the norm of transparency in foreign policy.
+
+\vspace{0.2em}
+
+The study by Myrick (2020) suggests that once we provide citizens with information about the outcomes of the policy, the norm of transparency loses most of its 'appeal'. Therefore, in another version of the first scenario, half of the respondents learn of successful outcome, and the other half read that the intervention failed. Following this information, respondents are asked again to state their degree of approval for the government decision. The plot below unpacks these responses along two dimensions - the three values of transparency (like figure 2), as well as whether the intervention was successful or not.  
+The results in figure 3 highlight the importance of outcomes, and raise some doubts about the importance of transparency. For unsuccessful intervention, the results show less criticism to an overt action (in other words, being transparent reduced the extent of public disapproval even when the policy fails). However, once the intervention is described as successful, the level of transparency loses most of its 'appeal’. Whether the action is overt or covert (either version), it garners substantial public approval. This result highlights the dominance of outcomes compared to the process in public evaluation of national security decisions.
+
+```{r fig.align="center", fig.width=7, fig.height=4.5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Support for intervention - tranparency and outcomes treatments"}
+
+# Remove middle category (total 6 respondents)
+MyData2 <- with(MyData, MyData[!(results1 == 4), ])
+
+# Code binary variables (1=approve; 0=disapprove)
+MyData2 <- MyData2 %>%
+  mutate(support2 = ifelse(results1>3, 1, 0))
+
+# Label facets
+result.lab <- c("No Success", "Success")
+names(result.lab) <- c(0, 1)
+
+p2 <- ggplot(MyData2, aes(x = factor(support2), group = factor(trt_result1))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.65) +
+  geom_text(aes( label = scales::percent(..prop..), fontface = "bold",
+                 y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_fill_brewer(palette="Set1") +
+  scale_x_discrete(labels = c("0" = "Disapprove", "1" = "Approve")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") +
+  facet_grid(trt_result1 ~ trt_covert1, labeller = labeller(trt_result1 = result.lab, trt_covert1 = covert.lab)) +
+  theme_bw()
+
+p2 <- p2 + theme(legend.position = 'none')
+p2
+
+```
+
+\vspace{0.3em}
+To further show the effects of both conditions, I run two regression models. In the first (model 1 in the table below), I show the effects of the transparency treatment on the degree of approval. The negative coefficients for *Covert* and *Covert_Secret* indicate that approval is lower for these versions of the intervention.  
+In model 2, I test how information about the outcomes affects the approval ratings of the intervention. The coefficient *Success* suggests that positive outcomes increase the level of approval compared to an unsuccessful one. Also, the transparency conditions are no longer significant, further strengthening the argument that once we provide information about the outcomes, transparency does not matter for the evaluation of the decision.
+
+```{r echo = FALSE, warning = FALSE, message=FALSE}
+
+# Regression models: two DVs
+library(modelsummary)
+
+m1 <- lm(approve1 ~ factor(trt_covert1) + gender + poli, data = MyData)
+m1a <- lm(results1 ~ factor(trt_covert1) + factor(trt_result1) + gender + poli, data = MyData)
+
+m <- list(m1, m1a)
+modelsummary(m, stars = T, 
+             coef_rename = c("factor(trt_covert1)2" = "Covert", "factor(trt_covert1)3" = "Covert_Secret",
+                                           "factor(trt_result1)1" = "Success", "gender" = "Gender", "poli" = "Party"))
+
+```
+
+
