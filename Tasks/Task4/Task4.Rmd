@@ -121,10 +121,163 @@ m1 <- lm(approve1 ~ factor(trt_covert1) + gender + poli, data = MyData)
 m1a <- lm(results1 ~ factor(trt_covert1) + factor(trt_result1) + gender + poli, data = MyData)
 
 m <- list(m1, m1a)
-modelsummary(m, stars = T, 
+modelsummary(m, stars = T, gof_omit = 'IC|Log|Adj|F',
              coef_rename = c("factor(trt_covert1)2" = "Covert", "factor(trt_covert1)3" = "Covert_Secret",
                                            "factor(trt_result1)1" = "Success", "gender" = "Gender", "poli" = "Party"))
+# order in models change?
+```
 
+\vspace{0.5em}
+The second scenario also describes a security situation. In this case, the US government contemplate to support the rebels by implementing one of two policy options: sending small military force, or providing financial support for the opposition. As in the previous scenario, I also describe the policy as either overt or covert, and collect responses on the degree of approval for the intervention.  
+
+In the figure below, I plot the distribution of approval across the policy type conditions. The figure shows that overall, an overt policy garners more approval than a covert one^[ I also run a test for the outcomes factor, similar to scenario 1 above. The details of the code are available on the R code file in the Github folder].
+
+```{r fig.align="center", fig.width=7.5, fig.height=4, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Support for intervention - tranparency (scenario 2)"}
+
+# label facets
+covert2.lab <- c("Overt action", "Covert action")
+names(covert2.lab) <- c(0, 1)
+
+# Figure 3: approve/disapprove for covert treatment (7-scale results)
+
+p3 <- ggplot(MyData, aes(x = factor(approve2), group = factor(trt_covert2))) +
+  geom_bar(aes(y = ..prop..,  fill = factor(..x..)), stat = "count", width = 0.75) +
+  geom_text(aes(label = scales::percent(..prop..),
+                y= ..prop.. ), stat= "count", vjust = -.5) +
+  scale_x_discrete(labels = c("1" = "Dis.Strong", "2" = "Dis.Some", "3" = "Dis.Slight", "4" = "Neutral",
+                              "5" = "App.Slight", "6" = "App.Some", "7" = "App.Stong")) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  xlab("") + ylab("Proportion") + 
+  facet_grid(~trt_covert2, labeller = labeller(trt_covert2 = covert2.lab)) +
+  theme_bw() + coord_flip()
+
+p3 <- p3 + theme(legend.position = 'none')
+p3
+
+```
+
+\vspace{0.3em}
+In the third and final scenario, the US government evaluates the implementation of sending military force to support the rebels using with covert or overt action. Another factor in-play is information about an overall opposition within the public for any American intervention in the region. Half of the respondents read this information, and the other half do not. The expectation is that general opposition to US involvement will reduce the degree of approval for the intervention decision.^[ The code to generate the figures for this analysis is detailed in the R code file.]  
+
+The main findings that is consistent across all three scenarios is that transparency matters, but to a point. Once individuals read about the outcomes of the intervention (overt or covert), they care much less about this issue and their approval for the government decision is mostly a function of the outcomes. The figure below shows the average level of approval based on both the policy type (covert/overt) and outcomes (success/not) conditions. I separate the results to experiments 2 and 3 (both include a similar transparency condition).
+
+```{r fig.align="center", fig.width=7.5, fig.height=4.5, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Support for intervention"}
+
+# Interactions of policy type and outcomes conditions
+## Experiment 2 
+
+MyData5 <- describeBy(MyData$results2,list(MyData$trt_covert2,MyData$trt_results2), mat=TRUE,digits=2)
+
+names(MyData5)[names(MyData5) == 'group1'] = 'type'
+names(MyData5)[names(MyData5) == 'group2'] = 'outcomes'
+
+levels(MyData5$type)[levels(MyData5$type)=='0'] = 'Overt'
+levels(MyData5$type)[levels(MyData5$type)=='1'] = 'Covert'
+levels(MyData5$outcomes)[levels(MyData5$outcomes)=='0'] = 'Unsuccessful'
+levels(MyData5$outcomes)[levels(MyData5$outcomes)=='1'] = 'Successful'
+
+MyData5$se <- MyData5$sd/sqrt(MyData5$n)
+limits = aes(ymax = mean + se, ymin=mean - se)
+dodge = position_dodge(width=0.9)
+apatheme=theme_bw()+
+  theme(panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.border=element_blank(),
+        axis.line=element_line(),
+        text=element_text(family='Times'))
+
+p9a <- ggplot(MyData5, aes(x = outcomes, y = mean, fill = type))+
+  geom_bar(stat='identity', position=dodge)+
+  geom_errorbar(limits, position=dodge, width=0.1)+
+  apatheme + scale_y_continuous(expand=c(0,0)) +
+  scale_x_discrete(labels = c("0" = "Unsuccessful", "1" = "Successful")) +
+  ylab('Mean Approval') + xlab("Policy Outcomes") + ggtitle("Experiment #2") +
+  scale_fill_manual(values = c("blue", "red"),
+                    name = "Policy Type",
+                    breaks = c(0, 1),
+                    labels = c("Overt", "Covert")) 
+  
+  
+## Experiment 3 
+
+MyData6 <- describeBy(MyData$results3,list(MyData$trt_covert3,MyData$trt_results3), mat=TRUE,digits=2)
+
+names(MyData6)[names(MyData6) == 'group1'] = 'type'
+names(MyData6)[names(MyData6) == 'group2'] = 'outcomes'
+
+levels(MyData6$type)[levels(MyData6$type)=='0'] = 'Overt'
+levels(MyData6$type)[levels(MyData6$type)=='1'] = 'Covert'
+levels(MyData6$outcomes)[levels(MyData6$outcomes)=='0'] = 'Unsuccessful'
+levels(MyData6$outcomes)[levels(MyData6$outcomes)=='1'] = 'Successful'
+
+MyData6$se <- MyData6$sd/sqrt(MyData6$n)
+limits = aes(ymax = mean + se, ymin=mean - se)
+dodge = position_dodge(width=0.9)
+apatheme=theme_bw()+
+  theme(panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.border=element_blank(),
+        axis.line=element_line(),
+        text=element_text(family='Times'))
+
+p9b <- ggplot(MyData6, aes(x = outcomes, y = mean, fill = type))+
+  geom_bar(stat='identity', position=dodge)+
+  geom_errorbar(limits, position=dodge, width=0.1)+
+  apatheme + scale_y_continuous(expand=c(0,0)) +
+  scale_x_discrete(labels = c("0" = "Unsuccessful", "1" = "Successful")) +
+  ylab("") + xlab("Policy outcomes") + ggtitle("Experiment #3") +
+  scale_fill_manual(values = c("blue", "red"),
+                    name = "Policy Type",
+                    breaks = c(0, 1),
+                    labels = c("Overt", "Covert")) 
+
+p9 <- ggarrange(p9a, p9b, nrow = 1, ncol = 2, 
+                common.legend = T, legend = "bottom")
+
+p9 <- annotate_figure(p9,
+                top = text_grob("Public support for foreign intervention",
+                                color = "black",
+                                face = "bold",
+                                size = 16))
+
+p9
+
+```
+
+\vspace{0.2em}
+The figure demonstrate the main finding of this survey, as well as the work by [Myrick (2020)](https://doi.org/10.1086/707308) - transparency is an important concept for democratic citizens, but not as much as the outcomes of a foreign policy.  
+
+\vspace{3em}
+I include one last analysis in this document. In the survey, I added a continuous measure for respondents level of trust in the government (0-100 scale). Then, I use the data collected for the third intervention scenario and test how the degree of trust in the government affects the approval of the intervention decision^[ As in the analysis depicted in figures 2 and 3 above, I collapse the 'Neutral' category and aggregate the responses to fit a binary *approve/disapprove* measure.].  
+The figure below displays the predicted probabilities of approval (binary) based on the type of policy (covert or overt), and different levels of trust in government. The first finding is that trust in government has a stable effect on the predicted approval of the intervention. That is, higher levels of trust in the government lead to higher probability of approving the intervention decision, regardless of its type (overt or covert, stil, overt has higher means of approval).
+
+```{r fig.align="center", fig.width=6, fig.height=4, echo = FALSE, warning = FALSE, message=FALSE, fig.cap= "Predicted support for intervention, an interaction model"}
+
+# Remove middle category (total 9 respondents)
+MyData4 <- with(MyData, MyData[!(approve3 == 4), ])
+
+# Code binary variables (1=approve; 0=disapprove)
+MyData4 <- MyData4 %>%
+  mutate(support4 = ifelse(approve3>3, 1, 0))
+
+# Trust cont. measure (no interactions): can be added to Git file
+library(ggeffects)
+
+m <- glm(support4 ~ factor(trt_covert3) + 
+                  trust_govt + transparent_imp + gender + poli, data = MyData4, family = binomial(link = "probit"))
+
+pre <- ggpredict(m, terms = c("trt_covert3", "trust_govt [17, 30, 56, 75]"))
+p8 <- plot(pre, ci.style = "errorbar") +
+  labs(
+    x = "",
+    y = "Probability of support",
+    title = "Predicted probability of public support for intervention policy",
+    colour = "Degree of trust in government") +
+  scale_x_continuous(labels = c("Overt", "Covert"), breaks = c(0, 1)) +
+  scale_colour_brewer(palette = "Set1", labels = c("10th", "25th", "75th", "90th")) +
+  theme(legend.position = "top")
+
+p8
 ```
 
 
